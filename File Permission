@@ -1,0 +1,125 @@
+researcher2@2199791d34ae:~$ pwd
+/home/researcher2
+researcher2@2199791d34ae:~$ ls
+projects
+researcher2@2199791d34ae:~$ cd projects 
+researcher2@2199791d34ae:~/projects$ ls -l
+total 20
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-rw- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw-r----- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ ls -a
+.   .project_x.txt  project_k.txt  project_r.txt
+..  drafts          project_m.txt  project_t.txt
+researcher2@2199791d34ae:~/projects$ ls - la
+ls: cannot access '-': No such file or directory
+ls: cannot access 'la': No such file or directory
+researcher2@2199791d34ae:~/projects$ chmod o-w project_k.txt
+researcher2@2199791d34ae:~/projects$ ls - l
+ls: cannot access '-': No such file or directory
+ls: cannot access 'l': No such file or directory
+researcher2@2199791d34ae:~/projects$ ls -l
+total 20
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw-r----- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ ls -a
+.   .project_x.txt  project_k.txt  project_r.txt
+..  drafts          project_m.txt  project_t.txt
+researcher2@2199791d34ae:~/projects$ chmod g-r project_m.txt
+researcher2@2199791d34ae:~/projects$ ls -l 
+total 20
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ ls -a
+.   .project_x.txt  project_k.txt  project_r.txt
+..  drafts          project_m.txt  project_t.txt
+researcher2@2199791d34ae:~/projects$ ls -la
+total 32
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 19:56 .
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 20:54 ..
+-rw--w---- 1 researcher2 research_team   46 Mar  3 19:56 .project_x.txt
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ chmod u-w,g-w .project_x.txt
+researcher2@2199791d34ae:~/projects$ ls -l
+total 20
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ ^C
+researcher2@2199791d34ae:~/projects$ chmod u-w,g-w .project_x.txt
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ ls -la
+total 32
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 19:56 .
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 20:54 ..
+-rw--w---- 1 researcher2 research_team   46 Mar  3 19:56 .project_x.txt
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ chmod u-w,g-w .project_x.txt
+researcher2@2199791d34ae:~/projects$ ^C
+researcher2@2199791d34ae:~/projects$ ls -la
+total 32
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 19:56 .
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 20:54 ..
+-r-------- 1 researcher2 research_team   46 Mar  3 19:56 .project_x.txt
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 drafts
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_k.txt
+-rw------- 1 researcher2 research_team   46 Mar  3 19:56 project_m.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_r.txt
+-rw-rw-r-- 1 researcher2 research_team   46 Mar  3 19:56 project_t.txt
+researcher2@2199791d34ae:~/projects$ cd drafts
+researcher2@2199791d34ae:~/projects/drafts$ ls -l
+total 0
+researcher2@2199791d34ae:~/projects/drafts$ ls-la
+-bash: ls-la: command not found
+researcher2@2199791d34ae:~/projects/drafts$ ls -la
+total 8
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 .
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 19:56 ..
+researcher2@2199791d34ae:~/projects/drafts$ ls -la
+total 8
+drwx--x--- 2 researcher2 research_team 4096 Mar  3 19:56 .
+drwxr-xr-x 3 researcher2 research_team 4096 Mar  3 19:56 ..
+researcher2@2199791d34ae:~/projects/drafts$ chmod g-x drafts
+chmod: cannot access 'drafts': No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ chmod g-x .drafts
+chmod: cannot access '.drafts': No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ cd peojects
+-bash: cd: peojects: No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ cd projects
+-bash: cd: projects: No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ chmod g-x drafts
+chmod: cannot access 'drafts': No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ chmod g-x drafts
+chmod: cannot access 'drafts': No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ ^C
+researcher2@2199791d34ae:~/projects/drafts$ cd projects
+-bash: cd: projects: No such file or directory
+researcher2@2199791d34ae:~/projects/drafts$ cd
+researcher2@2199791d34ae:~$ projects
+-bash: projects: command not found
+researcher2@2199791d34ae:~$ cd projects
+researcher2@2199791d34ae:~/projects$ chmod g-x drafts
+researcher2@2199791d34ae:~/projects$ ^C
+researcher2@2199791d34ae:~/projects$
